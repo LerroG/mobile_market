@@ -1,26 +1,9 @@
 <script setup lang="ts"></script>
 
 <template>
-	<div>
-		<Icon
-			size="22"
-			name="ic:baseline-favorite-border"
-			color="black"
-		/>
-		<span>Избранное</span>
-	</div>
-	<div>
-		<Icon
-			size="22"
-			name="ic:outline-shopping-cart"
-			color="black"
-		/><span>Корзина</span>
-	</div>
-	<div>
-		<Icon
-			size="22"
-			name="ic:outline-account-circle"
-			color="black"
-		/><span>Профиль</span>
-	</div>
+	<ul class="flex justify-end w-1/3">
+		<li><LayoutMenuFavorite /></li>
+		<li><LayoutMenuCart /></li>
+		<li><LayoutMenuProfile /></li>
+	</ul>
 </template>

@@ -3,5 +3,5 @@
 </script>
 
 <template>
-  <footer>Footer</footer>
+  <footer class="max-w-screen-xl m-auto">Footer</footer>
 </template>

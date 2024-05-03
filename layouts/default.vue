@@ -2,6 +2,6 @@
 
 <template>
 	<LayoutHeader />
-	<main><slot /></main>
+	<main class="max-w-screen-xl m-auto"><slot /></main>
 	<LayoutFooter />
 </template>

@@ -5,5 +5,5 @@ useHead({
 </script>
 
 <template>
-  <div>index</div>
+  <CardList />
 </template>
