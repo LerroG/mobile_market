@@ -24,12 +24,12 @@ export interface IProductRes {
   data: Product[];
 }
 
-export interface Product {
+interface Product {
   id: number;
   attributes: ProductAttributes;
 }
 
-export interface ProductAttributes {
+interface ProductAttributes {
   title: string;
   price: number;
   brand: string;
@@ -50,15 +50,15 @@ export interface ProductAttributes {
   main_image: MainImage;
 }
 
-export interface MainImage {
+interface MainImage {
   data: Image;
 }
 
-export interface Image {
+interface Image {
   id: number;
   attributes: ImageAttributes;
 }
 
-export interface ImageAttributes {
+interface ImageAttributes {
   url: string;
 }

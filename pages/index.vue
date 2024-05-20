@@ -1,8 +1,22 @@
 <script setup lang='ts'>
 import type { IProductCard, IProductRes } from '~/types/product.types';
 
-const { data: products } = await useFetch('http://localhost:1337/api/products', {
-  transform: (products: IProductRes): IProductCard[] => {
+const store = useFilterStore()
+const { search } = storeToRefs(store)
+
+const params = computed(() => {
+  if (search.value) {
+    return { 'filters[title][$contains]': search.value }
+  }
+}
+
+)
+
+const { data: products } = await useAsyncData('products', () => $fetch<IProductRes>('http://localhost:1337/api/products', {
+  params: params.value
+}), {
+  watch: [search],
+  transform: (products): IProductCard[] => {
     return products.data.map((product) => ({
       id: product.id,
       title: product.attributes.title,
@@ -13,7 +27,7 @@ const { data: products } = await useFetch('http://localhost:1337/api/products', 
 })
 
 useHead({
- title: getTitle('Home')
+  title: getTitle('Home')
 })
 </script>
 
